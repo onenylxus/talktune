@@ -1,0 +1,9 @@
+# Visual Studio Code requires installing an extension in
+# order to override its code/workspace settings
+
+root = true
+
+[*] # For any type of files
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
