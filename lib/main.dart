@@ -1,6 +1,8 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'firebase_options.dart';
+import 'package:talktune/constants/colors.dart';
+import 'package:talktune/screens/home_screen.dart';
+import 'package:talktune/firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -17,8 +19,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Talktune',
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: const Scaffold(),
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: colorBackground,
+      ),
+      home: const HomeScreen(),
     );
   }
 }
