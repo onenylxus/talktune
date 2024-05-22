@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:talktune/constants/colors.dart';
+import 'package:talktune/widgets/chat_list.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -46,19 +47,13 @@ class HomeScreen extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
             tabs: [
-              Tab(
-                text: 'CHATS',
-              ),
-              Tab(
-                text: 'STATUS',
-              ),
-              Tab(
-                text: 'CALLS',
-              ),
+              Tab(text: 'CHATS'),
+              Tab(text: 'STATUS'),
+              Tab(text: 'CALLS'),
             ],
           ),
         ),
-        body: const Scaffold(),
+        body: const ChatList(),
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
           backgroundColor: colorTab,
