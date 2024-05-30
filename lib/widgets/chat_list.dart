@@ -1,6 +1,7 @@
 import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
 import 'package:talktune/constants/colors.dart';
+import 'package:talktune/screens/chat_screen.dart';
 
 class ChatList extends StatelessWidget {
   const ChatList({super.key});
@@ -26,7 +27,13 @@ class ChatList extends StatelessWidget {
           return Column(
             children: [
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const ChatScreen(),
+                    ),
+                  );
+                },
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 8),
                   child: ListTile(
