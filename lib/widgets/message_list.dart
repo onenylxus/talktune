@@ -9,7 +9,8 @@ class MessageList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var faker = Faker();
-    final info = List.generate(faker.randomGenerator.integer(8, min: 4), (index) {
+    final info =
+        List.generate(faker.randomGenerator.integer(8, min: 4), (index) {
       return {
         'self': faker.randomGenerator.boolean(),
         'text': faker.lorem.sentence(),

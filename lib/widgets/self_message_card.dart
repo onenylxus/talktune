@@ -2,11 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:talktune/constants/colors.dart';
 
 class SelfMessageCard extends StatelessWidget {
-  const SelfMessageCard({
-    super.key,
-    required this.message,
-    required this.date
-  });
+  const SelfMessageCard({super.key, required this.message, required this.date});
 
   final String message;
   final String date;

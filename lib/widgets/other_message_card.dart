@@ -7,7 +7,7 @@ class OtherMessageCard extends StatelessWidget {
     required this.message,
     required this.date,
   });
-  
+
   final String message;
   final String date;
 
