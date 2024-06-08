@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:talktune/constants/colors.dart';
+import 'package:talktune/router.dart';
 import 'package:talktune/screens/landing_screen.dart';
 import 'package:talktune/firebase_options.dart';
 
@@ -23,6 +24,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: colorBackground,
       ),
+      onGenerateRoute: (settings) => generateRoute(settings),
       home: const LandingScreen(),
     );
   }

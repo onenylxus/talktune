@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:talktune/constants/colors.dart';
-import 'package:talktune/screens/home_screen.dart';
+import 'package:talktune/screens/login_screen.dart';
 import 'package:talktune/widgets/custom_button.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});
+
+  void navigateToLogin(BuildContext context) {
+    Navigator.pushNamed(context, LoginScreen.routeName);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,13 +48,7 @@ class LandingScreen extends StatelessWidget {
               width: size.width * 0.75,
               child: CustomButton(
                 text: 'AGREE AND CONTINUE',
-                onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute(
-                      builder: (context) => const HomeScreen(),
-                    ),
-                  );
-                },
+                onPressed: () => navigateToLogin(context),
               ),
             ),
           ],

@@ -31,5 +31,6 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
+.vscode/
 firebase.json
 lib/secret.dart
