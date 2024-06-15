@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: colorBackground,
+        appBarTheme: const AppBarTheme(color: colorAppBar),
       ),
       onGenerateRoute: (settings) => generateRoute(settings),
       home: const LandingScreen(),
