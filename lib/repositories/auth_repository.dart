@@ -32,7 +32,11 @@ class AuthRepository {
           throw Exception(e.message);
         },
         codeSent: (String verificationId, int? resendToken) async {
-          Navigator.pushNamed(context, OTPScreen.routeName, arguments: verificationId);
+          Navigator.pushNamed(
+            context,
+            OTPScreen.routeName,
+            arguments: verificationId,
+          );
         },
         codeAutoRetrievalTimeout: (String verificationId) {},
       );

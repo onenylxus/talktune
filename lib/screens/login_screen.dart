@@ -1,18 +1,21 @@
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:talktune/constants/colors.dart';
+import 'package:talktune/controllers/auth_controller.dart';
+import 'package:talktune/utils/utils.dart';
 import 'package:talktune/widgets/custom_button.dart';
 
-class LoginScreen extends StatefulWidget {
+class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
 
   static const routeName = '/login-screen';
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  ConsumerState<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _LoginScreenState extends ConsumerState<LoginScreen> {
   final phoneController = TextEditingController();
   Country? country;
 
@@ -26,9 +29,23 @@ class _LoginScreenState extends State<LoginScreen> {
     showCountryPicker(
       context: context,
       onSelect: (Country country) {
-        setState(() { this.country = country; });
+        setState(() {
+          this.country = country;
+        });
       },
     );
+  }
+
+  void sendPhoneNumber() {
+    String phoneNumber = phoneController.text.trim();
+
+    if (country != null && phoneNumber.isNotEmpty) {
+      ref
+        .read(authControllerProvider)
+        .signInWithPhone(context, '+${country!.phoneCode}$phoneNumber');
+    } else {
+      showSnackBar(context: context, content: 'Please fill out all the fields');
+    }
   }
 
   @override
@@ -73,7 +90,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: CustomButton(
                 onPressed: () {},
                 text: 'NEXT',
-              )
+              ),
             ),
           ],
         ),
