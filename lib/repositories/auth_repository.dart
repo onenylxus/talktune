@@ -1,8 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:talktune/screens/otp_screen.dart';
+import 'package:talktune/screens/user_info_screen.dart';
 import 'package:talktune/utils/utils.dart';
 
 final authRepositoryProvider = Provider(
@@ -40,6 +42,31 @@ class AuthRepository {
         },
         codeAutoRetrievalTimeout: (String verificationId) {},
       );
+    } on FirebaseAuthException catch (e) {
+      if (context.mounted) {
+        showSnackBar(context: context, content: e.message!);
+      }
+    }
+  }
+
+  void verifyOTP({
+    required BuildContext context,
+    required String verificationId,
+    required String userOTP,
+  }) async {
+    try {
+      PhoneAuthCredential credential = PhoneAuthProvider.credential(
+        verificationId: verificationId,
+        smsCode: userOTP,
+      );
+      await auth.signInWithCredential(credential);
+      if (context.mounted) {
+        Navigator.pushNamedAndRemoveUntil(
+          context,
+          UserInfoScreen.routeName,
+          (route) => false,
+        );
+      }
     } on FirebaseAuthException catch (e) {
       if (context.mounted) {
         showSnackBar(context: context, content: e.message!);

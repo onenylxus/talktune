@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:talktune/screens/login_screen.dart';
 import 'package:talktune/screens/otp_screen.dart';
+import 'package:talktune/screens/user_info_screen.dart';
 import 'package:talktune/widgets/error.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
@@ -15,6 +16,10 @@ Route<dynamic> generateRoute(RouteSettings settings) {
         builder: (context) => OTPScreen(
           verificationId: verificationId,
         ),
+      );
+    case UserInfoScreen.routeName:
+      return MaterialPageRoute(
+        builder: (context) => const UserInfoScreen(),
       );
     default:
       return MaterialPageRoute(
