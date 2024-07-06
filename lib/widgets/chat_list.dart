@@ -8,7 +8,7 @@ class ChatList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var faker = Faker();
+    final faker = Faker();
     final info =
         List.generate(faker.randomGenerator.integer(32, min: 8), (index) {
       return {

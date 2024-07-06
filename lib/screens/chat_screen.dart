@@ -8,7 +8,7 @@ class ChatScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var faker = Faker();
+    final faker = Faker();
 
     return Scaffold(
       appBar: AppBar(

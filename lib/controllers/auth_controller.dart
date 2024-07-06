@@ -3,10 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:talktune/repositories/auth_repository.dart';
 
 final authControllerProvider = Provider(
-  (ref) {
-    final authRepository = ref.watch(authRepositoryProvider);
-    return AuthController(authRepository: authRepository);
-  },
+  (ref) => AuthController(authRepository: ref.watch(authRepositoryProvider)),
 );
 
 class AuthController {
