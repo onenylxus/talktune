@@ -42,7 +42,7 @@ class _LoginScreenState extends ConsumerState<LoginScreen> {
     if (country != null && phoneNumber.isNotEmpty) {
       ref
           .read(authControllerProvider)
-          .signInWithPhone(context, '+${country!.phoneCode}$phoneNumber');
+          .signIn(context, '+${country!.phoneCode}$phoneNumber');
     } else {
       showSnackBar(context: context, content: 'Please fill out all the fields');
     }

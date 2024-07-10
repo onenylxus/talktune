@@ -1,18 +1,19 @@
 import 'dart:io';
-import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:talktune/controllers/auth_controller.dart';
 import 'package:talktune/utils/utils.dart';
 
-class UserInfoScreen extends StatefulWidget {
+class UserInfoScreen extends ConsumerStatefulWidget {
   const UserInfoScreen({super.key});
 
   static const routeName = '/user-info';
 
   @override
-  State<UserInfoScreen> createState() => _UserInfoScreenState();
+  ConsumerState<UserInfoScreen> createState() => _UserInfoScreenState();
 }
 
-class _UserInfoScreenState extends State<UserInfoScreen> {
+class _UserInfoScreenState extends ConsumerState<UserInfoScreen> {
   final TextEditingController nameController = TextEditingController();
   File? image;
 
@@ -26,10 +27,17 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
     image = await pickImageFromGallery(context);
   }
 
+  void storeUser() async {
+    String name = nameController.text.trim();
+
+    if (name.isNotEmpty) {
+      ref.read(authControllerProvider).saveUser(context, name, image);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    final faker = Faker();
 
     return Scaffold(
       body: SafeArea(
@@ -39,9 +47,8 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
               Stack(
                 children: [
                   image == null
-                      ? CircleAvatar(
-                          backgroundImage:
-                              NetworkImage(faker.image.image(random: true)),
+                      ? const CircleAvatar(
+                          backgroundImage: AssetImage('assets/avatar.jpg'),
                           radius: 64,
                         )
                       : CircleAvatar(
@@ -71,7 +78,7 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
                     ),
                   ),
                   IconButton(
-                    onPressed: () {},
+                    onPressed: storeUser,
                     icon: const Icon(Icons.done),
                   ),
                 ],
