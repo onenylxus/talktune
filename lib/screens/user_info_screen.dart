@@ -48,7 +48,7 @@ class _UserInfoScreenState extends ConsumerState<UserInfoScreen> {
                 children: [
                   image == null
                       ? const CircleAvatar(
-                          backgroundImage: AssetImage('assets/avatar.jpg'),
+                          backgroundImage: AssetImage('assets/avatar.png'),
                           radius: 64,
                         )
                       : CircleAvatar(
