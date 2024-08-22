@@ -6,6 +6,8 @@ import 'package:talktune/widgets/message_list.dart';
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
 
+  static const routeName = '/chat';
+
   @override
   Widget build(BuildContext context) {
     final faker = Faker();

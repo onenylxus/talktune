@@ -109,7 +109,7 @@ class AuthRepository {
         uid: uid,
         name: name,
         avatar: url,
-        phoneNumber: uid,
+        phoneNumber: auth.currentUser!.phoneNumber!,
         isOnline: true,
         groupId: [],
       );

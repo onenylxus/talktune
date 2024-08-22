@@ -7,7 +7,6 @@ import 'package:talktune/repositories/auth_repository.dart';
 final authControllerProvider = Provider(
   (ref) {
     final authRepository = ref.watch(authRepositoryProvider);
-
     return AuthController(
       authRepository: authRepository,
       ref: ref,

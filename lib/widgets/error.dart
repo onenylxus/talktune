@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 class WidgetError extends StatelessWidget {
-  const WidgetError({super.key, required this.error});
+  const WidgetError({
+    super.key,
+    required this.error,
+  });
 
   final String error;
 

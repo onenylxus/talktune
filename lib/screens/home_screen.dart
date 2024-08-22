@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:talktune/constants/colors.dart';
+import 'package:talktune/screens/select_contacts_screen.dart';
 import 'package:talktune/widgets/chat_list.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -55,7 +56,9 @@ class HomeScreen extends StatelessWidget {
         ),
         body: const ChatList(),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, SelectContactsScreen.routeName);
+          },
           backgroundColor: colorTab,
           child: const Icon(
             Icons.comment,
