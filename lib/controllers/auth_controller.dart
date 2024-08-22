@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:talktune/models/user_model.dart';
 import 'package:talktune/repositories/auth_repository.dart';
 
 final authControllerProvider = Provider(
@@ -14,6 +15,13 @@ final authControllerProvider = Provider(
   },
 );
 
+final userProvider = FutureProvider(
+  (ref) {
+    final authController = ref.watch(authControllerProvider);
+    return authController.getUser();
+  },
+);
+
 class AuthController {
   AuthController({
     required this.authRepository,
@@ -22,6 +30,11 @@ class AuthController {
 
   final AuthRepository authRepository;
   final ProviderRef ref;
+
+  Future<UserModel?> getUser() async {
+    UserModel? user = await authRepository.getUser();
+    return user;
+  }
 
   void signIn(BuildContext context, String phoneNumber) {
     authRepository.signIn(context, phoneNumber);

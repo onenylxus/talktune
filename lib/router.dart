@@ -24,7 +24,7 @@ Route<dynamic> generateRoute(RouteSettings settings) {
     default:
       return MaterialPageRoute(
         builder: (context) => const Scaffold(
-          body: ErrorScreen(error: 'This page does not exist'),
+          body: WidgetError(error: 'This page does not exist'),
         ),
       );
   }

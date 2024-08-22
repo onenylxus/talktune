@@ -26,6 +26,18 @@ class AuthRepository {
   final FirebaseAuth auth;
   final FirebaseFirestore firestore;
 
+  Future<UserModel?> getUser() async {
+    String uid = auth.currentUser!.uid;
+    var data = await firestore.collection('users').doc(uid).get();
+
+    UserModel? user;
+    if (data.data() != null) {
+      user = UserModel.fromMap(data.data()!);
+    }
+
+    return user;
+  }
+
   void signIn(BuildContext context, String phoneNumber) async {
     try {
       await auth.verifyPhoneNumber(
