@@ -9,12 +9,13 @@ class ChatList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final faker = Faker();
-    final info =
-        List.generate(faker.randomGenerator.integer(32, min: 8), (index) {
+    final size = faker.randomGenerator.integer(32, min: 8);
+    final info = List.generate(size, (index) {
+      final seed = faker.randomGenerator.integer(1000);
       return {
         'name': faker.person.name(),
         'message': faker.lorem.sentence(),
-        'icon': faker.image.image(random: true),
+        'icon': faker.image.loremPicsum(random: seed),
         'time': faker.date.justTime(),
       };
     });
