@@ -32,7 +32,10 @@ class ChatList extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).push(
                     MaterialPageRoute(
-                      builder: (context) => const ChatScreen(),
+                      builder: (context) => ChatScreen(
+                        name: info[index]['name'].toString(),
+                        uid: '12345678',
+                      ),
                     ),
                   );
                 },

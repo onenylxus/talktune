@@ -45,7 +45,14 @@ class ContactsRepository {
         if (phone == data.phoneNumber) {
           isMatch = true;
           if (context.mounted) {
-            Navigator.pushNamed(context, ChatScreen.routeName);
+            Navigator.pushNamed(
+              context,
+              ChatScreen.routeName,
+              arguments: {
+                'name': data.name,
+                'uid': data.uid,
+              },
+            );
           }
         }
       }

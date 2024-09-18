@@ -55,4 +55,8 @@ class AuthController {
       avatar: avatar,
     );
   }
+
+  Stream<UserModel> getUserData(String userId) {
+    return authRepository.getUserData(userId);
+  }
 }

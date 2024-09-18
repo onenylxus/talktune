@@ -1,21 +1,50 @@
-import 'package:faker/faker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:talktune/constants/colors.dart';
+import 'package:talktune/controllers/auth_controller.dart';
+import 'package:talktune/models/user_model.dart';
+import 'package:talktune/widgets/loader.dart';
 import 'package:talktune/widgets/message_list.dart';
 
-class ChatScreen extends StatelessWidget {
-  const ChatScreen({super.key});
+class ChatScreen extends ConsumerWidget {
+  const ChatScreen({
+    super.key,
+    required this.name,
+    required this.uid,
+  });
 
   static const routeName = '/chat';
 
-  @override
-  Widget build(BuildContext context) {
-    final faker = Faker();
+  final String name;
+  final String uid;
 
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: colorAppBar,
-        title: Text(faker.person.name()),
+        title: StreamBuilder<UserModel>(
+          stream: ref.read(authControllerProvider).getUserData(uid),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const WidgetLoader();
+            }
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(name),
+                const Text(
+                  // snapshot.data!.isOnline ? 'Online' : 'Offline',
+                  'Online',
+                  style: TextStyle(
+                    fontWeight: FontWeight.normal,
+                    fontSize: 13,
+                  ),
+                ),
+              ],
+            );
+          },
+        ),
         centerTitle: false,
         actions: [
           IconButton(

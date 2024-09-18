@@ -4,7 +4,10 @@ import 'package:talktune/constants/colors.dart';
 import 'package:talktune/controllers/auth_controller.dart';
 
 class OTPScreen extends ConsumerWidget {
-  const OTPScreen({super.key, required this.verificationId});
+  const OTPScreen({
+    super.key,
+    required this.verificationId,
+  });
 
   static const routeName = '/otp-screen';
 

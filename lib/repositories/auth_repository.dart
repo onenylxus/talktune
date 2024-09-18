@@ -128,4 +128,12 @@ class AuthRepository {
       }
     }
   }
+
+  Stream<UserModel> getUserData(String userId) {
+    return firestore
+        .collection('users')
+        .doc(userId)
+        .snapshots()
+        .map((event) => UserModel.fromMap(event.data()!));
+  }
 }
