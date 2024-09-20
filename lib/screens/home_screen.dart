@@ -1,8 +1,12 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
 import 'package:talktune/constants/colors.dart';
 import 'package:talktune/screens/select_contacts_screen.dart';
 import 'package:talktune/widgets/chat_list.dart';
 
+// Home screen class
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 

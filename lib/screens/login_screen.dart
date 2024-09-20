@@ -1,11 +1,17 @@
-import 'package:country_picker/country_picker.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:country_picker/country_picker.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+// Project imports:
 import 'package:talktune/constants/colors.dart';
 import 'package:talktune/controllers/auth_controller.dart';
 import 'package:talktune/utils/utils.dart';
 import 'package:talktune/widgets/custom_button.dart';
 
+// Login screen class
 class LoginScreen extends ConsumerStatefulWidget {
   const LoginScreen({super.key});
 
@@ -15,6 +21,7 @@ class LoginScreen extends ConsumerStatefulWidget {
   ConsumerState<LoginScreen> createState() => _LoginScreenState();
 }
 
+// Login screen state class
 class _LoginScreenState extends ConsumerState<LoginScreen> {
   final phoneController = TextEditingController();
   Country? country;

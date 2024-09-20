@@ -1,9 +1,17 @@
+// Dart imports:
 import 'dart:io';
+
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+// Project imports:
 import 'package:talktune/controllers/auth_controller.dart';
 import 'package:talktune/utils/utils.dart';
 
+// User information screen class
 class UserInfoScreen extends ConsumerStatefulWidget {
   const UserInfoScreen({super.key});
 
@@ -13,6 +21,7 @@ class UserInfoScreen extends ConsumerStatefulWidget {
   ConsumerState<UserInfoScreen> createState() => _UserInfoScreenState();
 }
 
+// User information screen state class
 class _UserInfoScreenState extends ConsumerState<UserInfoScreen> {
   final TextEditingController nameController = TextEditingController();
   File? image;

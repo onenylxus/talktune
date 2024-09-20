@@ -1,3 +1,4 @@
+// User model class
 class UserModel {
   UserModel({
     required this.uid,
@@ -15,6 +16,7 @@ class UserModel {
   final bool isOnline;
   final List<String> groupId;
 
+  // Convert user data to map
   Map<String, dynamic> toMap() {
     return {
       'uid': uid,
@@ -26,6 +28,7 @@ class UserModel {
     };
   }
 
+  // Convert map to user data
   factory UserModel.fromMap(Map<String, dynamic> map) {
     return UserModel(
       uid: map['uid'] ?? '',

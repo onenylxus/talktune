@@ -1,6 +1,10 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
 import 'package:talktune/constants/colors.dart';
 
+// Message card from self class
 class SelfMessageCard extends StatelessWidget {
   const SelfMessageCard({
     super.key,

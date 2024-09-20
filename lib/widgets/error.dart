@@ -1,5 +1,7 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
 
+// Error text class
 class WidgetError extends StatelessWidget {
   const WidgetError({
     super.key,

@@ -1,10 +1,16 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_contacts/flutter_contacts.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+// Project imports:
 import 'package:talktune/controllers/contacts_controller.dart';
 import 'package:talktune/widgets/error.dart';
 import 'package:talktune/widgets/loader.dart';
 
+// Select contacts screen class
 class SelectContactsScreen extends ConsumerWidget {
   const SelectContactsScreen({super.key});
 

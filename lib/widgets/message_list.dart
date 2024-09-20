@@ -1,8 +1,14 @@
-import 'package:faker/faker.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:faker/faker.dart';
+
+// Project imports:
 import 'package:talktune/widgets/other_message_card.dart';
 import 'package:talktune/widgets/self_message_card.dart';
 
+// Message list class
 class MessageList extends StatelessWidget {
   const MessageList({super.key});
 

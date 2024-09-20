@@ -1,8 +1,14 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+// Project imports:
 import 'package:talktune/constants/colors.dart';
 import 'package:talktune/controllers/auth_controller.dart';
 
+// OTP verification screen class
 class OTPScreen extends ConsumerWidget {
   const OTPScreen({
     super.key,

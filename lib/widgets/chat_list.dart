@@ -1,8 +1,14 @@
-import 'package:faker/faker.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:faker/faker.dart';
+
+// Project imports:
 import 'package:talktune/constants/colors.dart';
 import 'package:talktune/screens/chat_screen.dart';
 
+// Chat list class
 class ChatList extends StatelessWidget {
   const ChatList({super.key});
 

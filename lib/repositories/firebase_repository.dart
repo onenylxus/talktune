@@ -1,13 +1,18 @@
+// Dart imports:
 import 'dart:io';
+
+// Package imports:
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+// Firebase repository provider
 final firebaseRepositoryProvider = Provider(
   (ref) => FirebaseRepository(
     storage: FirebaseStorage.instance,
   ),
 );
 
+// Firebase repository class
 class FirebaseRepository {
   FirebaseRepository({
     required this.storage,

@@ -1,6 +1,10 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
 import 'package:talktune/constants/colors.dart';
 
+// Custom button class
 class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,

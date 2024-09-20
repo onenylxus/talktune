@@ -1,17 +1,24 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_contacts/flutter_contacts.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+// Project imports:
 import 'package:talktune/models/user_model.dart';
 import 'package:talktune/screens/chat_screen.dart';
 import 'package:talktune/utils/utils.dart';
 
+// Contacts repository provider
 final contactsRepositoryProvider = Provider(
   (ref) => ContactsRepository(
     firestore: FirebaseFirestore.instance,
   ),
 );
 
+// Contacts repository class
 class ContactsRepository {
   ContactsRepository({
     required this.firestore,

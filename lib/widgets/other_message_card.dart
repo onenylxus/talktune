@@ -1,6 +1,10 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
 import 'package:talktune/constants/colors.dart';
 
+// Message card from others class
 class OtherMessageCard extends StatelessWidget {
   const OtherMessageCard({
     super.key,

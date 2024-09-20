@@ -1,11 +1,17 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+// Project imports:
 import 'package:talktune/constants/colors.dart';
 import 'package:talktune/controllers/auth_controller.dart';
 import 'package:talktune/models/user_model.dart';
 import 'package:talktune/widgets/loader.dart';
 import 'package:talktune/widgets/message_list.dart';
 
+// Chat screen class
 class ChatScreen extends ConsumerWidget {
   const ChatScreen({
     super.key,

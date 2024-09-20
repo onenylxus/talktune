@@ -1,8 +1,15 @@
+// Dart imports:
 import 'dart:io';
+
+// Flutter imports:
+import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+// Project imports:
 import 'package:talktune/models/user_model.dart';
 import 'package:talktune/repositories/firebase_repository.dart';
 import 'package:talktune/screens/home_screen.dart';
@@ -10,6 +17,7 @@ import 'package:talktune/screens/otp_screen.dart';
 import 'package:talktune/screens/user_info_screen.dart';
 import 'package:talktune/utils/utils.dart';
 
+// Authentication repository provider
 final authRepositoryProvider = Provider(
   (ref) => AuthRepository(
     auth: FirebaseAuth.instance,
@@ -17,6 +25,7 @@ final authRepositoryProvider = Provider(
   ),
 );
 
+// Authentication repository class
 class AuthRepository {
   AuthRepository({
     required this.auth,

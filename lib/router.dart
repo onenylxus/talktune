@@ -1,4 +1,7 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
 import 'package:talktune/screens/chat_screen.dart';
 import 'package:talktune/screens/login_screen.dart';
 import 'package:talktune/screens/otp_screen.dart';
@@ -6,6 +9,7 @@ import 'package:talktune/screens/select_contacts_screen.dart';
 import 'package:talktune/screens/user_info_screen.dart';
 import 'package:talktune/widgets/error.dart';
 
+// Generate route function
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
     case ChatScreen.routeName:

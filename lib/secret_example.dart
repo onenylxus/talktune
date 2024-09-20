@@ -1,5 +1,7 @@
+// Package imports:
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 
+// Secret class
 class Secret {
   static const FirebaseOptions firebaseOptionsAndroid = FirebaseOptions(
     apiKey: '',

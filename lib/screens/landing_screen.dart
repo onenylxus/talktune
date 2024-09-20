@@ -1,8 +1,12 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Project imports:
 import 'package:talktune/constants/colors.dart';
 import 'package:talktune/screens/login_screen.dart';
 import 'package:talktune/widgets/custom_button.dart';
 
+// Landing screen class
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});
 

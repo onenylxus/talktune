@@ -1,9 +1,17 @@
+// Dart imports:
 import 'dart:io';
+
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+// Project imports:
 import 'package:talktune/models/user_model.dart';
 import 'package:talktune/repositories/auth_repository.dart';
 
+// Authentication controller provider
 final authControllerProvider = Provider(
   (ref) {
     final authRepository = ref.watch(authRepositoryProvider);
@@ -14,6 +22,7 @@ final authControllerProvider = Provider(
   },
 );
 
+// User provider
 final userProvider = FutureProvider(
   (ref) {
     final authController = ref.watch(authControllerProvider);
@@ -21,6 +30,7 @@ final userProvider = FutureProvider(
   },
 );
 
+// Authentication controller class
 class AuthController {
   AuthController({
     required this.authRepository,

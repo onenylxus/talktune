@@ -1,8 +1,14 @@
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:flutter_contacts/flutter_contacts.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+// Project imports:
 import 'package:talktune/repositories/contacts_repository.dart';
 
+// Contacts controller provider
 final contactsControllerProvider = Provider(
   (ref) {
     final contactsRepository = ref.watch(contactsRepositoryProvider);
@@ -13,6 +19,7 @@ final contactsControllerProvider = Provider(
   },
 );
 
+// Contacts provider
 final contactsProvider = FutureProvider(
   (ref) {
     final contactsRepository = ref.watch(contactsRepositoryProvider);
@@ -20,6 +27,7 @@ final contactsProvider = FutureProvider(
   },
 );
 
+// Contacts controller class
 class ContactsController {
   ContactsController({
     required this.contactsRepository,

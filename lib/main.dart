@@ -1,15 +1,21 @@
-import 'package:firebase_core/firebase_core.dart';
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
+// Project imports:
 import 'package:talktune/constants/colors.dart';
 import 'package:talktune/controllers/auth_controller.dart';
+import 'package:talktune/firebase_options.dart';
 import 'package:talktune/router.dart';
 import 'package:talktune/screens/home_screen.dart';
 import 'package:talktune/screens/landing_screen.dart';
-import 'package:talktune/firebase_options.dart';
 import 'package:talktune/widgets/error.dart';
 import 'package:talktune/widgets/loader.dart';
 
+// Main function
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
@@ -18,6 +24,7 @@ Future<void> main() async {
   runApp(const ProviderScope(child: MyApp()));
 }
 
+// Application class
 class MyApp extends ConsumerWidget {
   const MyApp({super.key});
 
